@@ -1,11 +1,11 @@
 import math
+
 import torch
 import torch.nn as nn
 from torch.nn.utils.rnn import pad_sequence
 from torch.optim import AdamW
-from tqdm import tqdm
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = "cuda" if torch.cuda.is_available() else "mps" if torch.backends.mps.is_available() else "cpu"
 print("Device:", device)
 
 # -------------------------
